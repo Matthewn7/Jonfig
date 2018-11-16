@@ -28,7 +28,7 @@ Jonfig jonfig = new Jonfig(directory, this.getClass(), logger);
 Config config = jonfig.load("/config.json", json -> {
     JSONObject jsonObject = (JSONObject) json;
 
-    // return new Test()...
+    // return new Config()...
     return () -> (String) jsonObject.get("test");
 });
 
