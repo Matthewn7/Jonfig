@@ -7,7 +7,7 @@
     <groupId>co.uk.matthogan</groupId>
     <artifactId>jonfig</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,8 +34,22 @@
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>fbb87d613fe7-releases</name>
+            <url>http://admin:6B3rimx9JyREQZEflU2e@repo.skyblock.net/artifactory/jonfig</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>fbb87d613fe7-snapshots</name>
+            <url>http://127.0.0.1:8082/artifactory/jonfig</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <defaultGoal>install</defaultGoal>
@@ -50,28 +64,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.4.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <relocations>
-                                <relocation>
-                                    <pattern>org.json</pattern>
-                                    <shadedPattern>co.uk.matthogan.lib.json</shadedPattern>
-                                </relocation>
-                            </relocations>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
