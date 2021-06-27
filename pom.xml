@@ -38,19 +38,6 @@
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>fbb87d613fe7-releases</name>
-            <url>http://admin:6B3rimx9JyREQZEflU2e@repo.skyblock.net/artifactory/jonfig</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>fbb87d613fe7-snapshots</name>
-            <url>http://127.0.0.1:8082/artifactory/jonfig</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <build>
         <defaultGoal>install</defaultGoal>
         <finalName>${project.name}-${maven.build.timestamp}-${version}</finalName>
